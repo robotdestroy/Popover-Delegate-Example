@@ -21,8 +21,8 @@
 }
 
 - (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
-    SecondViewController *secondVC = [[SecondViewController alloc] init];
-    [secondVC setDelegate:self];
+    SecondViewController *secondVC = segue.destinationController;
+    secondVC.delegate = self;
 }
 
 - (void)sendTextToViewController:(NSString *)string {
